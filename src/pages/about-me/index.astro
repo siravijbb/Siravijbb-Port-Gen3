@@ -46,7 +46,9 @@ import Footer from '../../components/Footer.astro'
       <div
         class="mx-auto max-w-7xl rounded-lg bg-neutral-200 text-black sm:px-2 md:px-8 md:pb-20"
       >
-        <div class="pb-auto mx-auto flex rounded-lg py-10 sm:px-2 md:px-8">
+        <div
+          class="pb-auto mx-auto rounded-lg py-10 sm:block sm:px-2 md:flex md:px-8"
+        >
           <div
             class="item-center mx-auto flex-auto rounded-lg bg-white px-5 text-center shadow-xl hover:shadow-2xl"
           >
@@ -70,15 +72,8 @@ import Footer from '../../components/Footer.astro'
             <p>
               <ol>
                 <li>
-                  - วันเกิด : 29/7/2003 <p class="inline text-sm" id="result">
+                  - วันเกิด : 15/12/XXXX <p class="inline text-sm" id="result">
                   </p>
-                </li>
-                <li>
-                  - วันเดบิวต์ : 29/7/2019 <p class="inline text-sm" id="annd">
-                  </p>
-                </li>
-                <li>
-                  - อายุ : <p class="inline" id="age"></p> ปี - ส่วนสูง : 155 เซนติเมตร
                 </li>
                 <li>- Lore: เป็นหุ่นยนต์Ai</li>
                 <li>- อิโมจิประจำตัว : 🐱, 💚</li>
@@ -95,111 +90,114 @@ import Footer from '../../components/Footer.astro'
                   สวัสดีค่า เวอร์ช่วลไอดอลไอช่า มาแล้วค่า!”*
                 </p>
                 <p class="py-1">
-                  <li class="flex">
-                    <p class="flex-inline items-center">
+                  <li>
+                    <p class="inline items-center">
                       - สังกัด :
                       <a
                         href="https://www.facebook.com/GAAICompany/"
                         aria-label="Guardian Angel Ai Co Ltd Facebook Page"
-                        class="flex items-center"
                       >
                         <span
-                          ><p
-                            class="my-auto inline rounded-lg bg-black p-1 text-white shadow-lg hover:shadow-xl"
+                          ><div
+                            class="inline rounded-lg bg-black p-1 text-white shadow-lg hover:shadow-xl"
                           >
                             <img
-                              class="-mt- my-auto h-5 w-auto items-center pr-4"
+                              class="p-auto mx-1 mb-1 inline h-5 w-auto items-center"
                               src="/garten.svg"
-                              alt="Creators Gartens Logo"
+                              alt="Guardian Angel Ai Co Ltd. Logo"
                               height="fit"
                               width="auto"
                             />
-                            CreatorsGarten
-                          </p>
+                            <p
+                              class="-ml-1 inline rounded-lg bg-black p-1 text-white shadow-lg hover:shadow-xl"
+                            >
+                              creatorsgarten
+                            </p>
+                          </div>
                         </span>
                       </a>
                     </p>
                   </li>
+                  <div class="grid grid-cols-2 py-4">
+                    <span>
+                      - papa : <a href="https://twitter.com/Nock3d">
+                        <p
+                          class="m-1 rounded-lg bg-neutral-200 p-2 text-center hover:bg-gray-400"
+                        >
+                          @Nock3d
+                        </p>
+                      </a>
+                      <a href="https://twitter.com/LIVINERA">
+                        <p
+                          class="m-1 rounded-lg bg-neutral-200 p-2 text-center hover:bg-gray-400"
+                        >
+                          @LIVINERA
+                        </p></a
+                      >
+                    </span>
+                    <span
+                      >- mama :
+                      <a href="https://twitter.com/vpkmit">
+                        <p
+                          class="m-1 rounded-lg bg-neutral-200 p-2 text-center hover:bg-gray-400"
+                        >
+                          @vpkmit
+                        </p></a
+                      >
+                      <a href="https://twitter.com/mcmclunar">
+                        <p
+                          class="m-1 rounded-lg bg-neutral-200 p-2 text-center hover:bg-gray-400"
+                        >
+                          @mcmclunar
+                        </p>
+                      </a>
+                    </span>
+                  </div>
                 </p>
-                <div class="grid grid-cols-2 py-4">
-                  <span>
-                    - papa : <a href="https://twitter.com/Nock3d">
-                      <p
-                        class="m-1 rounded-lg bg-neutral-200 p-2 text-center hover:bg-gray-400"
-                      >
-                        @Nock3d
-                      </p>
-                    </a>
-                    <a href="https://twitter.com/LIVINERA">
-                      <p
-                        class="m-1 rounded-lg bg-neutral-200 p-2 text-center hover:bg-gray-400"
-                      >
-                        @LIVINERA
-                      </p></a
-                    >
-                  </span>
-                  <span
-                    >- mama :
-                    <a href="https://twitter.com/vpkmit">
-                      <p
-                        class="m-1 rounded-lg bg-neutral-200 p-2 text-center hover:bg-gray-400"
-                      >
-                        @vpkmit
-                      </p></a
-                    >
-                    <a href="https://twitter.com/mcmclunar">
-                      <p
-                        class="m-1 rounded-lg bg-neutral-200 p-2 text-center hover:bg-gray-400"
-                      >
-                        @mcmclunar
-                      </p>
-                    </a>
-                  </span>
-                </div>
               </ol>
             </p>
           </div>
         </div>
       </div>
+      <Footer />
+
+      <style>
+        .text-gradient {
+          background-image: var(--accent-gradient);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-size: 400%;
+          background-position: 0%;
+        }
+        .instructions {
+          line-height: 1.6;
+          margin: 1rem 0;
+          border: 1px solid rgba(var(--accent), 25%);
+
+          padding: 1rem;
+          border-radius: 0.4rem;
+        }
+        .instructions code {
+          font-size: 0.875em;
+          font-weight: bold;
+          background: rgba(var(--accent), 12%);
+          color: rgb(var(--accent));
+          border-radius: 4px;
+          padding: 0.3em 0.45em;
+        }
+        .instructions strong {
+          color: rgb(var(--accent));
+        }
+        .Maincon {
+          font-size: 1.5rem;
+          max-width: 1280px;
+          margin: 40px auto;
+        }
+        .col-span-middle {
+          grid-column: span 2;
+          text-align: center;
+        }
+      </style>
     </p>
-    <Footer />
-
-    <style>
-      .text-gradient {
-        background-image: var(--accent-gradient);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-size: 400%;
-        background-position: 0%;
-      }
-      .instructions {
-        line-height: 1.6;
-        margin: 1rem 0;
-        border: 1px solid rgba(var(--accent), 25%);
-
-        padding: 1rem;
-        border-radius: 0.4rem;
-      }
-      .instructions code {
-        font-size: 0.875em;
-        font-weight: bold;
-        background: rgba(var(--accent), 12%);
-        color: rgb(var(--accent));
-        border-radius: 4px;
-        padding: 0.3em 0.45em;
-      }
-      .instructions strong {
-        color: rgb(var(--accent));
-      }
-      .Maincon {
-        font-size: 1.5rem;
-        max-width: 1280px;
-        margin: 40px auto;
-      }
-      .col-span-middle {
-        grid-column: span 2;
-        text-align: center;
-      }
-    </style>
   </main>
 </body>
