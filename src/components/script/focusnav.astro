@@ -33,10 +33,13 @@
   // Check for different pages and highlight corresponding links
   if (currentPath.includes('/blog')) {
     highlightLink('a[href="/blog"]')
-  } else if (currentPath.includes('/time')) {
-    highlightLink('a[href="/time"]')
+  } else if (currentPath.includes('/contact')) {
+    highlightLink('a[href="/contact"]')
 
     // Add more links to highlight for the "other-page" here if needed
+  } else if (currentPath.includes('/about-me')) {
+    highlightLink('a[href="/about-me"]')
+    // highlightLink("#dropdownNavbarLink");
   } else if (currentPath.includes('/#another-page')) {
     highlightLink('a[href="/another-page"]')
     // highlightLink("#dropdownNavbarLink");
