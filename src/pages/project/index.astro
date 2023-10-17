@@ -1,0 +1,92 @@
+---
+import Navbar from '../../components/Navbar.astro'
+import Layout from '../../components/layout.astro'
+import Footer from '../../components/Footer.astro'
+import Project1 from '../../components/project/project1.astro'
+import Project3 from '../../components/project/model3.astro'
+import Project5 from '../../components/project/model5.astro'
+import Project2 from '../../components/project/model2.astro'
+import Project4 from '../../components/project/model4.astro'
+import Project6 from '../../components/project/model6.astro'
+import Project7 from '../../components/project/model7.astro'
+import Project8 from '../../components/project/model8.astro'
+import Project9 from '../../components/project/model9.astro'
+import Project10 from '../../components/project/model10.astro'
+import Project11 from '../../components/project/model11.astro'
+import Project12 from '../../components/project/model12.astro'
+import Project13 from '../../components/project/model13.astro'
+---
+
+<head>
+  <Layout
+    title="Project"
+    ,
+    description="My project page"
+    ,
+    image="/full-body.webp"
+    ,
+  />
+</head>
+
+<body>
+  <Navbar />
+  <main
+    class="mx-auto mt-20 max-w-7xl rounded-xl bg-neutral-200 pb-4 shadow-xl dark:bg-[#121212] dark:text-white"
+  >
+    <div class="-mt-20">
+      <div class="mx-auto rounded-xl py-4">
+        <div
+          class="mx-auto max-w-4xl text-ellipsis rounded-lg bg-white py-4 shadow-xl dark:bg-[#332940] lg:px-8"
+        >
+          <h1 class="pb-4 text-center text-2xl md:text-left">
+            My on working/archived project
+          </h1>
+          <img
+            src="/NR_Gear_logo_white.webp"
+            class="flex w-full items-center space-x-28 rounded-2xl bg-gray-900 p-5 md:block md:w-auto"
+            alt="NORTH BANGKOK GEEKS ENGINEERING AWESOME ROBOTIC SOLUTIONS"
+          />
+          <p class="text-ellipsis p-4 text-sm xl:text-base">
+            &nbsp;&nbsp;&nbsp;As a student, I have to do many projects. Some of
+            them are for my own project. Some are my passion project or Group
+            project.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="rounded-lg bg-white px-6 shadow-xl dark:border-gray-700 dark:bg-[#332940] md:mx-4 lg:px-8"
+    >
+      <h1 class="pt-4 text-center text-2xl md:text-left">My project</h1>
+
+      <p class="text-gray-500 dark:text-gray-400">
+        <ul class="grind cen grid-cols-1 text-xl">
+          <li class="">
+            <p class="-mb-5 ml-1 text-center md:text-left">
+              On going/Not yet finnished
+            </p>
+            <ul class="grind grid grid-cols-6 gap-4 py-4 md:grid-cols-4">
+              <li><Project1 /></li>
+              <li><Project2 /></li>
+              <li><Project3 /></li>
+              <li><Project4 /></li>
+            </ul>
+          </li>
+          <li class="">
+            <p class="-mb-5 ml-1 text-center md:text-left">Archived</p>
+            <ul class="grind grid grid-cols-1 gap-4 py-4 md:grid-cols-4">
+              <li><Project8 /></li>
+              <li><Project5 /></li>
+              <li><Project6 /></li>
+              <li><Project7 /></li>
+              <li><Project9 /></li>
+            </ul>
+          </li>
+        </ul>
+      </p>
+    </div>
+
+    <div class="-mb-7 mt-8"><Footer /></div>
+  </main>
+</body>
