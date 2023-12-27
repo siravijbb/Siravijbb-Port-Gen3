@@ -1,8 +1,8 @@
 <script>
   const statusPairs = [
     [
-      'Cancled due to copy right',
-      'ml-1 bg-red-500 text-white px-2 pt-1 -mt-1 flex-initial rounded-xl',
+      'Archived',
+      'ml-1 bg-blue-500 text-white px-2 pt-1 -mt-1 flex-initial rounded-xl',
     ],
   ]
   const modelPairs = [
@@ -57,29 +57,26 @@
   <!-- Modal toggle -->
   <div class="mx-auto max-w-xs">
     <button
-      data-modal-target="model9"
-      data-modal-toggle="model9"
+      data-modal-target="Model9"
+      data-modal-toggle="Model9"
       class="h-full w-full py-2"
       type="button"
-      disabled
     >
       <div
         class="overflow-hidden rounded-lg bg-white shadow-lg hover:bg-neutral-200 hover:shadow-2xl"
         id="punroon"
       >
-        <div class="bg-gray-500">
+        <div class="bg-gray-500 pb-1">
           <img
             class="mx-auto w-auto sm:h-24 md:h-56"
-
+            src="/project/aisha/aisha.webp"
             height="auto"
             width="auto"
           />
         </div>
         <div class="">
           <h1 class="text-lg font-bold text-gray-700">Aisha Wiki</h1>
-          <p class="text-base text-gray-700">
-            An first time of more organised website coding
-          </p>
+          <p class="text-base text-gray-700">First time of organised website</p>
         </div>
       </div>
     </button>
@@ -87,7 +84,7 @@
 
   <!-- Main modal -->
   <div
-    id="model9"
+    id="Model9"
     tabindex="-1"
     aria-hidden="true"
     class="fixed left-0 right-0 top-0 z-50 hidden h-[calc(100%-1rem)] max-h-full w-full overflow-y-auto overflow-x-hidden p-4 md:inset-0"
@@ -100,13 +97,12 @@
           class="flex items-start justify-between rounded-t border-b p-4 dark:border-gray-600"
         >
           <h3 class="text-xl font-semibold text-gray-900 dark:text-white">
-            Aisha Wiki
+            Aisha wiki
           </h3>
           <button
             type="button"
             class="ml-auto inline-flex h-8 w-8 items-center justify-center rounded-lg bg-transparent text-sm text-gray-400 hover:bg-gray-200 hover:text-gray-900 dark:hover:bg-gray-600 dark:hover:text-white"
-            data-modal-hide="model9"
-            disabled
+            data-modal-hide="Model9"
           >
             <svg
               class="h-3 w-3"
@@ -136,29 +132,12 @@
               >
                 <!-- Carousel wrapper -->
                 <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
-                  <!-- Item 1 -->
-                  <div class="ease-700 hidden ease-in-out" data-carousel-item>
-                    <img
-                      src="/model/model9.0.webp "
-                      class="absolute left-1/2 top-1/2 block h-32 w-auto -translate-x-1/2 -translate-y-1/2 md:h-96"
-                      alt="..."
-                    />
-                  </div>
-                  <!-- Item 2 -->
-                  <div class="ease-700 hidden ease-in-out" data-carousel-item>
-                    <img
-                      src="/model/model9.1.webp "
-                      class="absolute left-1/2 top-1/2 block h-32 w-auto -translate-x-1/2 -translate-y-1/2 md:h-96"
-                      alt="..."
-                    />
-                  </div>
-                  <div class="ease-700 hidden ease-in-out" data-carousel-item>
-                    <img
-                      src="/model/model9.2.webp "
-                      class="absolute left-1/2 top-1/2 block h-32 w-auto -translate-x-1/2 -translate-y-1/2 md:h-96"
-                      alt="..."
-                    />
-                  </div>
+                  <img
+                    src="/project/aisha/aisha.webp"
+                    class="absolute left-1/2 top-1/2 block h-32 w-auto -translate-x-1/2 -translate-y-1/2 md:h-96"
+                    alt="..."
+                  />
+
                   <!-- Item 3 -->
                 </div>
                 <!-- Slider indicators -->
@@ -177,12 +156,6 @@
                     aria-current="false"
                     aria-label="Slide 2"
                     data-carousel-slide-to="1"></button>
-                  <button
-                    type="button"
-                    class="h-3 w-3 rounded-full"
-                    aria-current="false"
-                    aria-label="Slide 3"
-                    data-carousel-slide-to="2"></button>
                 </div>
                 <!-- Slider controls -->
                 <button
@@ -253,10 +226,17 @@
           class="flex items-center space-x-2 rounded-b border-t border-gray-200 p-6 dark:border-gray-600"
         >
           <button
-            data-modal-hide="model9"
+            data-modal-hide="Model9"
             type="button"
             class="rounded-lg border border-gray-200 bg-white px-5 py-2.5 text-sm font-medium text-gray-500 hover:bg-gray-100 hover:text-gray-900 focus:z-10 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:border-gray-500 dark:bg-gray-700 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white dark:focus:ring-gray-600"
             >ปิด</button
+          >
+          <a
+            href="https://kmuttshowcase-aishawiki.siravijbb.com"
+            data-modal-hide="model9"
+            type="button"
+            class="rounded-lg border border-gray-200 bg-white px-5 py-2.5 text-sm font-medium text-gray-500 hover:bg-gray-100 hover:text-gray-900 focus:z-10 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:border-gray-500 dark:bg-gray-700 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white dark:focus:ring-gray-600"
+            >Link</a
           >
         </div>
       </div>
