@@ -55,7 +55,7 @@ const transformedTitle =
     ></script></head
   >
 
-  <body class="h-full w-full bg-white dark:bg-[#121212]">
+  <body class=" bg-white dark:bg-[#121212]">
     <slot />
   </body>
 
@@ -63,19 +63,6 @@ const transformedTitle =
     @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai+Looped&family=IBM+Plex+Sans+Thai:wght@500&display=swap');
     body {
       font-family: 'IBM Plex Sans Thai', 'IBM Plex Sans Thai Looped', sans-serif;
-    }
-    :root {
-      --accent: 124, 58, 237;
-      --accent-gradient: linear-gradient(
-        45deg,
-        rgb(var(--accent)),
-        #da62c4 30%,
-        white 60%
-      );
-    }
-    html {
-      font-family: system-ui, sans-serif;
-      background-color: #f6f6f6;
     }
     code {
       font-family: Menlo, Monaco, Lucida Console, Liberation Mono,

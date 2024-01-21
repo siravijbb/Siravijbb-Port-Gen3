@@ -20,7 +20,7 @@ import Contact from '../../components/script/Contact.astro'
 <body>
   <AishaB />
   <main
-    class="customFont mx-auto max-w-7xl gap-4 rounded-xl shadow-xl dark:bg-[#332940]"
+    class="customFont mx-auto max-w-7xl gap-4 rounded-xl shadow-xl dark:bg-[#332940] h-full "
   >
     <p>
       <p id="debutAnnment" class="text-center text-sm"></p>
@@ -218,6 +218,18 @@ import Contact from '../../components/script/Contact.astro'
           grid-column: span 2;
           text-align: center;
         }
+        :root {
+      --accent: 124, 58, 237;
+      --accent-gradient: linear-gradient(
+        45deg,
+        rgb(var(--accent)),
+        #da62c4 30%,
+        white 60%
+      );
+    }
+    html {
+      font-family: system-ui, sans-serif;
+    }
       </style>
     </p>
   </main>
