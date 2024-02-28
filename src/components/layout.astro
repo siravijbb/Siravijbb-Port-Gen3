@@ -1,6 +1,7 @@
 ---
 import Navbar from './Navbar.astro'
 import Footer from './Footer.astro'
+import { ViewTransitions } from 'astro:transitions';
 
 export interface Props {
   title?: string
@@ -19,8 +20,8 @@ const transformedTitle =
 ---
 
 <!DOCTYPE html>
-<html lang="en">
-  <head>
+<html lang="en" >
+  <head transition:animate="none">
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -49,17 +50,21 @@ const transformedTitle =
 
     <meta property="og:image" content={image} />
     <meta property="twitter:image" content={image} />
-    <script
-      is:inline
-      src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.6/flowbite.min.js"
-    ></script></head
+    <script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.0/flowbite.min.js"></script>
+
+
+</head
   >
 
-  <body class=" bg-white dark:bg-[#121212]">
+  <body class=" bg-white dark:bg-[#121212]" transition:animate="slide">
     <slot />
-  </body>
 
+
+
+  </body>
+  <ViewTransitions />
   <style is:global>
+
     @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai+Looped&family=IBM+Plex+Sans+Thai:wght@500&display=swap');
     body {
       font-family: 'IBM Plex Sans Thai', 'IBM Plex Sans Thai Looped', sans-serif;
@@ -69,4 +74,5 @@ const transformedTitle =
         DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
     }
   </style>
+  <script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.0/flowbite.min.js"></script>
 </html>
