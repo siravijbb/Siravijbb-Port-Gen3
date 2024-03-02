@@ -1,7 +1,7 @@
 ---
 import Navbar from './Navbar.astro'
 import Footer from './Footer.astro'
-import { ViewTransitions } from 'astro:transitions';
+
 
 export interface Props {
   title?: string
@@ -21,7 +21,7 @@ const transformedTitle =
 
 <!DOCTYPE html>
 <html lang="en" >
-  <head transition:animate="none">
+  <head >
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -56,7 +56,7 @@ const transformedTitle =
 </head
   >
 
-  <body class=" bg-white dark:bg-[#121212]" transition:animate="slide">
+  <body class=" bg-white dark:bg-[#121212]" >
     <slot />
 
 
