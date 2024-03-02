@@ -40,10 +40,14 @@
   } else if (currentPath.includes('/about-me')) {
     highlightLink('a[href="/about-me"]')
     // highlightLink("#dropdownNavbarLink");
-  } else if (currentPath.includes('/#another-page')) {
+  } else if (currentPath.includes('/project')) {
+    highlightLink('a[href="/project"]')
+    // highlightLink("#dropdownNavbarLink");
+  }
+  else if (currentPath.includes('/#another-page')) {
     highlightLink('a[href="/another-page"]')
     // highlightLink("#dropdownNavbarLink");
-  } else {
+  }else {
     // Default highlighting for the home page
     highlightLink('a[href="/"]')
   }
