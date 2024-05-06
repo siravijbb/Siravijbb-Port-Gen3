@@ -50,12 +50,12 @@ const { page, featuredBlogPost } = Astro.props
 <div class="bg-white dark:bg-[#332940]">
   <Navbar />
   <div class="mx-auto mt-4 max-w-7xl gap-4 rounded-xl dark:bg-[#121212]">
-    <div class="rounded-xl dark:bg-[#121212] sm:px-6 lg:px-8">
+    <div class="rounded-xl sm:px-6 lg:px-8 dark:bg-[#121212]">
       {
         featuredBlogPost !== null && (
           <div class="mx-auto mb-6 max-w-4xl pt-6">
             <a href={`/blog/${featuredBlogPost.slug}`} rel="prefetch">
-              <div class="relative overflow-hidden rounded-none sm:rounded-2xl shadow-lg hover:shadow-xl">
+              <div class="relative overflow-hidden rounded-none shadow-lg hover:shadow-xl sm:rounded-2xl">
                 <div class="absolute bottom-0 left-0 right-0 top-0 z-10 flex items-end bg-black-overlay p-6 md:p-8">
                   <div class="space-y-0.5 text-white md:space-y-2">
                     <span class="text-base uppercase md:text-lg">Featured</span>
@@ -87,7 +87,7 @@ const { page, featuredBlogPost } = Astro.props
           page.data.map(({ data, slug }, i) => (
             <a href={`/blog/${slug}`} rel="prefetch">
               <div
-                class="relative overflow-hidden rounded-none bg-white shadow-lg hover:shadow-xl dark:bg-[#332940] sm:rounded-2xl "
+                class="relative overflow-hidden rounded-none bg-white shadow-lg hover:shadow-xl sm:rounded-2xl dark:bg-[#332940] "
                 style={`view-transition-name: blog-${slug}`}
               >
                 {data.draft && (

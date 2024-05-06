@@ -21,7 +21,7 @@ const { banner, title, subtitle } = data
 
   <div class="mx-auto max-w-7xl pt-6">
     <div
-      class="overflow-hidden rounded-none bg-white shadow-xl dark:bg-[#332940] sm:rounded-2xl"
+      class="overflow-hidden rounded-none bg-white shadow-xl sm:rounded-2xl dark:bg-[#332940]"
       style={`view-transition-name: blog-${slug}`}
     >
       <div class="flex items-center justify-center overflow-hidden">
@@ -34,7 +34,7 @@ const { banner, title, subtitle } = data
           fetchPriority="high"
         />
       </div>
-      <div class="px-4 py-8 dark:text-gray-50 sm:px-6 lg:px-8">
+      <div class="px-4 py-8 sm:px-6 lg:px-8 dark:text-gray-50">
         <Heading {...Astro.props} />
 
         <article
