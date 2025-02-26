@@ -25,48 +25,47 @@ import Footer from '../../components/Footer.astro'
         class="text-ellipsis rounded-lg bg-white pt-4 shadow-xl dark:bg-[#332940]"
       >
         <p class="text-center text-2xl dark:text-gray-300">My availability</p>
-          <div>
-            <iframe
-              class="map mx-auto px-4"
-              src="https://calendar.google.com/calendar/embed?height=600&wkst=1&bgcolor=%23E67C73&ctz=Asia%2FBangkok&showNav=1&showTitle=0&showDate=1&showTabs=0&showPrint=0&showTz=0&showCalendars=0&src=c2lyYXZpamJiQGdtYWlsLmNvbQ&color=%237986CB"
-              title="availability Map"
-              width="100%"
-              height="450"
-              style=""
-              loading="lazy"
-              allowfullscreen></iframe>
-          </div>
-          <div>
-            <!-- Google Calendar Appointment Scheduling begin -->
-            <iframe
-              class="map mx-auto shadow-xl"
-              src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ3tryV4X0Y-fZDqoJNZO2JWH1gATAVoK3AY3wKaXkDNAc3XNH9iORsGQH61ulew0-Pt86MJy0_O?gv=true"
-              title="availability Map"
-              width="80%"
-              height="450"
-              style=""
-              loading="lazy"
-              allowfullscreen></iframe>
-            <!-- end Google Calendar Appointment Scheduling -->
-          </div>
+        <div>
+          <iframe
+            class="map mx-auto px-4"
+            src="https://calendar.google.com/calendar/embed?height=600&wkst=1&bgcolor=%23E67C73&ctz=Asia%2FBangkok&showNav=1&showTitle=0&showDate=1&showTabs=0&showPrint=0&showTz=0&showCalendars=0&src=c2lyYXZpamJiQGdtYWlsLmNvbQ&color=%237986CB"
+            title="availability Map"
+            width="100%"
+            height="450"
+            style=""
+            loading="lazy"
+            allowfullscreen></iframe>
         </div>
-        <div class="hover:bg-gray-400">
-          <a
-            target="_blank"
-            href="https://calendar.google.com/calendar/render?action=TEMPLATE&add=siravijbb@gmail.com&text=Request+Meet/Talk+About+XXXX+At+DDMMYYYY"
-            ><p
-              class="mx-4 my-2 rounded-xl bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 p-4 px-4 text-center text-2xl shadow-xl"
-            >
-              Request Advance Booking
-            </p></a
-          >
+        <div>
+          <!-- Google Calendar Appointment Scheduling begin -->
+          <iframe
+            class="map mx-auto shadow-xl"
+            src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ3tryV4X0Y-fZDqoJNZO2JWH1gATAVoK3AY3wKaXkDNAc3XNH9iORsGQH61ulew0-Pt86MJy0_O?gv=true"
+            title="availability Map"
+            width="80%"
+            height="450"
+            style=""
+            loading="lazy"
+            allowfullscreen></iframe>
+          <!-- end Google Calendar Appointment Scheduling -->
         </div>
-        <div class="grid gap-1 py-2 sm:grid-cols-1 md:grid-cols-1"></div>
       </div>
+      <div class="hover:bg-gray-400">
+        <a
+          target="_blank"
+          href="https://calendar.google.com/calendar/render?action=TEMPLATE&add=siravijbb@gmail.com&text=Request+Meet/Talk+About+XXXX+At+DDMMYYYY"
+          ><p
+            class="mx-4 my-2 rounded-xl bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 p-4 px-4 text-center text-2xl shadow-xl"
+          >
+            Request Advance Booking
+          </p></a
+        >
+      </div>
+      <div class="grid gap-1 py-2 sm:grid-cols-1 md:grid-cols-1"></div>
     </div>
   </div>
-  <div class="-mb-4 mt-8"><Footer /></div>
 </main>
+<div class="-mb-4 mt-8"><Footer /></div>
 
 <style>
   @media (prefers-color-scheme: dark) {
