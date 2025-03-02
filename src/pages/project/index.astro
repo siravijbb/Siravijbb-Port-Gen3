@@ -2,19 +2,7 @@
 import Navbar from '../../components/Navbar.astro'
 import Layout from '../../components/layout.astro'
 import Footer from '../../components/Footer.astro'
-import Project1 from '../../components/project/project1.astro'
-import Project3 from '../../components/project/model3.astro'
-import Project5 from '../../components/project/model5.astro'
-import Project2 from '../../components/project/model2.astro'
-import Project4 from '../../components/project/model4.astro'
-import Project6 from '../../components/project/model6.astro'
-import Project7 from '../../components/project/model7.astro'
-import Project8 from '../../components/project/model8.astro'
-import Project9 from '../../components/project/model9.astro'
-import Project10 from '../../components/project/model10.astro'
-import Project11 from '../../components/project/model11.astro'
-import Project12 from '../../components/project/model12.astro'
-import Project13 from '../../components/project/model13.astro'
+import Card from '../../components/project/card/projectCard.astro'
 ---
 
 <head>
@@ -56,37 +44,49 @@ import Project13 from '../../components/project/model13.astro'
     </div>
 
     <div
-      class="rounded-lg bg-white px-6 shadow-xl md:mx-4 lg:px-8 dark:border-gray-700 dark:bg-[#332940]"
+      class="rounded-lg bg-white sm:pb-4 md:pb-64 shadow-xl md:mx-4 lg:px-8 dark:border-gray-700 dark:bg-[#332940] "
     >
-      <h1 class="pt-4 text-center text-2xl md:text-left">My project</h1>
+      <h1 class="pt-4 -mb-6 text-center text-2xl md:text-left">My project</h1>
+      <h2 class="pt-4 -mb-6 text-center text-2xl ">More Coming Soon...</h2>
 
-      <p class="text-gray-500 dark:text-gray-400">
-        <ul class="grind cen grid-cols-1 text-xl">
-          <li class="">
-            <p class="-mb-5 ml-1 text-center md:text-left">
-              On going/Not yet finnished
-            </p>
-            <ul class="grind grid grid-cols-1 gap-4 py-4 md:grid-cols-4">
-              <li><Project3 /></li>
-            </ul>
-          </li>
-          <li class="">
-            <p class="-mb-5 ml-1 text-center md:text-left">Archived</p>
-            <ul class="grind grid grid-cols-1 gap-4 py-4 md:grid-cols-4">
-              <li><Project10 /></li>
-              <li><Project2 /></li>
-              <li><Project9 /></li>
-              <li><Project8 /></li>
-              <li><Project5 /></li>
-              <li><Project6 /></li>
-              <li><Project7 /></li>
-              <li><Project1 /></li>
+        <ul class="grind mx-auto grid-cols-1 text-xl">
 
-              <li><Project4 /></li>
+            <ul class="grind grid grid-cols-1 gap-4 py-8 md:grid-cols-4 md:gap-y-40">
+              <li><Card
+                name="KNACKSAT-2 TGPS"
+                description="Thai German Pre-Engineering Sattlelite Project"
+                image="/KNACK2.jpg"
+              /></li>
+              <li><Card
+                name="Hoku Birthday Wish Sending And Reader Project"
+                description="First time of using DB"
+                image="/project/hokubd/1.jpg"
+              /></li>
+              <li><Card
+                name="NB GEARS Robootic Team"
+                description="Robotic Competition as Coding Engineer"
+                image="/team.webp"
+              /></li>
+              <li><Card
+                name="Siravij Portfolio Gen 1"
+                description="First time of HTML Coding on M4"
+                image="/project/gen1/gen1.webp"
+              /></li>
+              <li><Card
+                name="NB GEARS Website Gen 1"
+                description="First time written for Team"
+                image="/project/nbgearsgen1/gen1.webp"
+              /></li>
+              <li><Card
+                name="Garry's Mod mod E2 mods"
+                description="Garry's Mod coding mod for common E2 code"
+                image="/E2-Gmod-random.png"
+              /></li>
+
             </ul>
-          </li>
+
+
         </ul>
-      </p>
     </div>
 
     <div class="-mb-7 mt-8"><Footer /></div>
