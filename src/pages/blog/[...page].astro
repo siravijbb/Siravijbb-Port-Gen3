@@ -50,7 +50,7 @@ const { page, featuredBlogPost } = Astro.props
 <div class="bg-white">
   <Navbar />
   <div class="mx-auto mt-4 max-w-7xl gap-4 rounded-xl ">
-    <div class="rounded-xl sm:px-6 lg:px-8 dark:bg-[#121212]">
+    <div class="rounded-xl sm:px-6 lg:px-8 ">
       {
         featuredBlogPost !== null && (
           <div class="mx-auto mb-6 max-w-4xl pt-6">
@@ -87,7 +87,7 @@ const { page, featuredBlogPost } = Astro.props
           page.data.map(({ data, slug }, i) => (
             <a href={`/blog/${slug}`} rel="prefetch">
               <div
-                class="relative overflow-hidden rounded-none bg-white shadow-lg hover:shadow-xl sm:rounded-2xl dark:bg-[#332940] "
+                class="relative overflow-hidden rounded-none bg-white shadow-lg hover:shadow-xl sm:rounded-2xl  "
                 style={`view-transition-name: blog-${slug}`}
               >
                 {data.draft && (
@@ -107,20 +107,20 @@ const { page, featuredBlogPost } = Astro.props
                   />
                 </div>
                 <div class="p-4 sm:p-6">
-                  <h1 class="text-2xl text-gray-900 dark:text-gray-50">
+                  <h1 class="text-2xl text-gray-900">
                     {data.title}
                   </h1>
-                  <p class="pt-1 text-gray-600 dark:text-gray-200	">
+                  <p class="pt-1 text-gray-600 0	">
                     Written by{' '}
-                    <span class="font-medium text-gray-800 dark:text-gray-50 ">
+                    <span class="font-medium text-gray-800  ">
                       {data.author}
                     </span>{' '}
                     on{' '}
-                    <span class="font-medium text-gray-800 dark:text-gray-50">
+                    <span class="font-medium text-gray-800 ">
                       {serializeDate(data.date)}
                     </span>
                   </p>
-                  <p class="py-2 text-gray-600 dark:text-gray-100">
+                  <p class="py-2 text-gray-600">
                     {data.subtitle}
                   </p>
                 </div>
