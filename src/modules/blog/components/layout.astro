@@ -19,7 +19,7 @@ const { banner, title, subtitle } = data
 <AppLayout title={title} description={subtitle} image={banner.url}>
   <Navbar />
 
-  <div class="mx-auto max-w-7xl pt-6">
+  <div class="mx-auto max-w-4xl pt-6">
     <div
       class="overflow-hidden rounded-none bg-white shadow-xl sm:rounded-2xl dark:bg-[#332940]"
       style={`view-transition-name: blog-${slug}`}
@@ -38,7 +38,7 @@ const { banner, title, subtitle } = data
         <Heading {...Astro.props} />
 
         <article
-          class="prose prose-blue mx-auto max-w-6xl pt-6 dark:prose-invert dark:text-gray-50"
+          class="prose prose-blue mx-auto max-w-6xl pt-6 text-2xl"
         >
           <slot />
         </article>
