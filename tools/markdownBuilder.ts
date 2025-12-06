@@ -22,7 +22,6 @@ const rootMarkdownDirectory = path.join(process.cwd(), 'src/content/blog')
       console.log('writing...')
       await Promise.all(
         blogPosts.map(blogPost => {
-          // 1. Construct a clean Javascript Object (No manual formatting needed)
           const header = {
             title: blogPost.title,
             subtitle: blogPost.subtitle,
@@ -41,10 +40,8 @@ const rootMarkdownDirectory = path.join(process.cwd(), 'src/content/blog')
             draft: blogPost.sys.publishedAt === null,
           }
 
-          // 2. Use yaml.dump to create perfect Frontmatter
           const frontmatter = yaml.dump(header)
 
-          // 3. Combine with content safely
           const builtContent = `---\n${frontmatter}---\n\n${blogPost.content}`
 
           return fs.promises.writeFile(
@@ -55,7 +52,6 @@ const rootMarkdownDirectory = path.join(process.cwd(), 'src/content/blog')
       )
       break
     case 'clean':
-      // (Your clean logic remains the same)
       await Promise.all(
         fs
           .readdirSync(rootMarkdownDirectory)
