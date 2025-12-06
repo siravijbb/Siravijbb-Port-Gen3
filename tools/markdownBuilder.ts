@@ -1,5 +1,6 @@
 import * as fs from 'fs'
 import * as path from 'path'
+import * as yaml from 'js-yaml' // Import js-yaml
 
 import { config } from 'dotenv'
 
@@ -9,11 +10,6 @@ import { getBlogPosts } from './services/getBlogPosts'
 config()
 
 const rootMarkdownDirectory = path.join(process.cwd(), 'src/content/blog')
-const stringifyArray = (strings: (string | number)[]) => {
-  return `[${strings
-    .map(o => (typeof o === 'string' ? `"${o.replace(/\"/g, '\\"')}"` : o))
-    .join(', ')}]`
-}
 
 ;(async () => {
   const command = process.argv[process.argv.length - 1]
@@ -26,30 +22,31 @@ const stringifyArray = (strings: (string | number)[]) => {
       console.log('writing...')
       await Promise.all(
         blogPosts.map(blogPost => {
+          // 1. Construct a clean Javascript Object (No manual formatting needed)
           const header = {
-            title: `"${blogPost.title.replace(/\"/g, '\\"')}"`,
-            subtitle: `"${blogPost.subtitle}"`,
-            date: blogPost.date,
+            title: blogPost.title,
+            subtitle: blogPost.subtitle,
+            date: new Date(blogPost.date),
             author: blogPost.author ? blogPost.author.name : 'Unknown Author',
-            categories: stringifyArray(
-              blogPost.categoryCollection.items.map(o => o.name)
-            ),
-            banner: `\n${[
-              ['url', blogPost.banner.url],
-              ['width', blogPost.banner.width],
-              ['height', blogPost.banner.height],
-              ['placeholder', blogPost.banner.placeholder.encoded],
-              ['blurhash', blogPost.banner.placeholder.blurhashCode],
-            ]
-              .map(([key, val]) => `  ${key}: ${val}`)
-              .join('\n')}`,
-            featured: blogPost.featured ? 'true' : 'false',
+            categories: blogPost.categoryCollection.items.map(o => o.name),
+            // Pass the banner as a real object, not a string
+            banner: {
+              url: blogPost.banner.url,
+              width: blogPost.banner.width,
+              height: blogPost.banner.height,
+              placeholder: blogPost.banner.placeholder.encoded,
+              blurhash: blogPost.banner.placeholder.blurhashCode,
+            },
+            featured: blogPost.featured ? true : false, // boolean is fine
             draft: blogPost.sys.publishedAt === null,
           }
 
-          const builtContent = `---\n${Object.entries(header)
-            .map(([key, val]) => `${key}: ${val}`)
-            .join('\n')}\n---\n\n${blogPost.content}`
+          // 2. Use yaml.dump to create perfect Frontmatter
+          const frontmatter = yaml.dump(header)
+
+          // 3. Combine with content safely
+          const builtContent = `---\n${frontmatter}---\n\n${blogPost.content}`
+
           return fs.promises.writeFile(
             path.join(rootMarkdownDirectory, `${blogPost.slug}.md`),
             builtContent
@@ -58,6 +55,7 @@ const stringifyArray = (strings: (string | number)[]) => {
       )
       break
     case 'clean':
+      // (Your clean logic remains the same)
       await Promise.all(
         fs
           .readdirSync(rootMarkdownDirectory)
