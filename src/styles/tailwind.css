@@ -15,11 +15,29 @@
   --color-black-overlay: rgba(0, 0, 0, 0.25);
 }
 
-/* Theme toggle animates the snapshot itself (see Navbar.astro), so drop the default crossfade */
-::view-transition-old(root),
-::view-transition-new(root) {
+/*
+ * Theme toggle (see Navbar.astro): reveal the new theme as a circle growing
+ * from the click point. Driven by CSS so it runs from the first frame and the
+ * view transition always waits for it to finish.
+ */
+html.theme-transition::view-transition-old(root) {
   animation: none;
+}
+html.theme-transition::view-transition-new(root) {
+  animation: theme-reveal 600ms cubic-bezier(0.4, 0, 0.2, 1);
   mix-blend-mode: normal;
+}
+html.theme-transition::view-transition-group(root) {
+  animation-duration: 600ms;
+}
+
+@keyframes theme-reveal {
+  from {
+    clip-path: circle(0 at var(--theme-x) var(--theme-y));
+  }
+  to {
+    clip-path: circle(var(--theme-r) at var(--theme-x) var(--theme-y));
+  }
 }
 
 @layer base {

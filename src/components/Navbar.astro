@@ -127,21 +127,13 @@ const isActive = (href: string) =>
       Math.max(y, innerHeight - y)
     )
 
-    document.startViewTransition(applyTheme).ready.then(() => {
-      root.animate(
-        {
-          clipPath: [
-            `circle(0px at ${x}px ${y}px)`,
-            `circle(${radius}px at ${x}px ${y}px)`,
-          ],
-        },
-        {
-          duration: 650,
-          easing: 'cubic-bezier(0.25, 0.8, 0.4, 1)',
-          pseudoElement: '::view-transition-new(root)',
-        }
-      )
-    })
+    root.style.setProperty('--theme-x', `${x}px`)
+    root.style.setProperty('--theme-y', `${y}px`)
+    root.style.setProperty('--theme-r', `${radius}px`)
+    root.classList.add('theme-transition')
+    document
+      .startViewTransition(applyTheme)
+      .finished.finally(() => root.classList.remove('theme-transition'))
   })
 
   const menuToggle = document.getElementById('navbar-toggle')
