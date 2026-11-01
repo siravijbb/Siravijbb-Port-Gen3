@@ -2,7 +2,8 @@ import { defineConfig } from 'astro/config'
 
 /* Astro plugins */
 import sitemap from '@astrojs/sitemap'
-import tailwind from '@astrojs/tailwind'
+import tailwindcss from '@tailwindcss/vite'
+import { unified } from '@astrojs/markdown-remark'
 
 /* Remark plugins */
 import { iframeParser } from './src/modules/remark/iframeParser.mjs'
@@ -17,9 +18,13 @@ export default defineConfig({
     sitemap({
       filter: page => !page.includes('/pages/'),
     }),
-    tailwind(),
   ],
   markdown: {
-    remarkPlugins: [iframeParser, imageParser, readingTime],
+    processor: unified({
+      remarkPlugins: [iframeParser, imageParser, readingTime],
+    }),
+  },
+  vite: {
+    plugins: [tailwindcss()],
   },
 })

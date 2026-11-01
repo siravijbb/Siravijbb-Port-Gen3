@@ -4,41 +4,34 @@ import Layout from '../components/layout.astro'
 import Footer from '../components/Footer.astro'
 ---
 
-<head>
-  <Layout
-    title="Home"
-    ,
-    description="Siravij's Website"
-    ,
-    image="/full-body.webp"
-    ,
-  />
-</head>
-
-<body>
-  <main class="mx-auto h-screen overflow-hidden bg-neutral-500">
-    <Navbar />
-    <div class="-pt-4 -mt-10"><Footer /></div>
-    <div
-      class="relative flex h-screen w-full flex-col items-center justify-center overflow-hidden"
-    >
-      <div class="z-10 w-full pl-10 text-left text-4xl text-white lg:-mt-96">
-        <div class="mt-32 w-fit rounded-xl bg-gray-900 p-4 md:mt-72 lg:mt-96">
-          Welcome to<b class="text-[#ab98ff] underline"> Siravij's</b>
-          <span class="block text-xl">I'm Siravij Praevisavakij</span>
-        </div>
-      </div>
-
-      <div class="z-10 flex pl-10 text-left text-white lg:-mt-96"></div><div
-        class="absolute"
-      >
+<Layout
+  title="Home"
+  description="Siravij's Website"
+  image="/Siravij_INTBall-900.webp"
+  bodyClass="flex flex-col"
+>
+  <Navbar />
+  <main class="flex flex-1 bg-neutral-500 dark:bg-neutral-800">
+    <div class="mx-auto flex w-full max-w-7xl items-center justify-center px-6 py-10">
+      <div class="relative w-full max-w-[calc(80svh*3/4)]">
         <img
-          src="Siravij_INTBall.webp"
-          alt="It's Me,Siravij!"
-          class="mx-auto mb-56 sm:h-auto sm:w-auto md:h-screen"
-          id="widget2"
+          src="/Siravij_INTBall-900.webp"
+          srcset="/Siravij_INTBall-900.webp 900w, /Siravij_INTBall.webp 4284w"
+          sizes="(min-width: 768px) 50vw, 100vw"
+          width="900"
+          height="1200"
+          alt="It's Me, Siravij!"
+          fetchpriority="high"
+          class="h-auto w-full rounded-xl shadow-xl"
         />
+        <div
+          class="absolute inset-x-4 bottom-4 rounded-xl bg-gray-900/75 p-4 text-2xl text-white shadow-xl backdrop-blur-sm sm:text-3xl md:text-4xl"
+        >
+          Welcome to<b class="text-[#ab98ff] underline"> Siravij's</b>
+          <span class="block text-lg sm:text-xl">I'm Siravij Praevisavakij</span>
+        </div>
       </div>
     </div>
   </main>
-</body>
+  <Footer />
+</Layout>

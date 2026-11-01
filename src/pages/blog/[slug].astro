@@ -3,6 +3,7 @@ import { getCollectionBlog } from '$core/services/getCollectionBlog'
 import BaseLayout from '$modules/blog/components/layout.astro'
 
 import type { GetStaticPaths } from 'astro'
+import { render } from 'astro:content'
 import type { CollectionEntry } from 'astro:content'
 
 export interface Props {
@@ -18,13 +19,13 @@ export const getStaticPaths: GetStaticPaths = async () => {
         blog,
       },
       params: {
-        slug: blog.slug,
+        slug: blog.id,
       },
     }
   })
 }
 
-const renderedContent = await Astro.props.blog.render()
+const renderedContent = await render(Astro.props.blog)
 const { Content } = renderedContent
 ---
 
@@ -33,5 +34,4 @@ const { Content } = renderedContent
   minutesRead={renderedContent.remarkPluginFrontmatter.minutesRead}
 >
   <Content />
-  <!-- {renderedContent.Content.} -->
 </BaseLayout>

@@ -5,18 +5,7 @@ import Footer from '../../components/Footer.astro'
 import Card from '../../components/project/card/projectCard.astro'
 ---
 
-<head>
-  <Layout
-    title="Project"
-    ,
-    description="My project page"
-    ,
-    image="/full-body.webp"
-    ,
-  />
-</head>
-
-<body>
+<Layout title="Project" description="My project page" image="/siravij.webp">
   <Navbar />
   <main
     class="mx-auto mt-20 max-w-7xl rounded-xl bg-neutral-200 pb-4 shadow-xl dark:bg-[#121212] dark:text-white"
@@ -49,7 +38,7 @@ import Card from '../../components/project/card/projectCard.astro'
       <h1 class="pt-4 -mb-6 text-center text-2xl md:text-left">My project</h1>
       <h2 class="pt-4 -mb-6 text-center text-2xl ">More Coming Soon...</h2>
 
-        <ul class= mx-auto grid-cols-1 text-xl">
+        <ul class="mx-auto grid-cols-1 text-xl">
 
             <ul class=" grid grid-cols-1 gap-4 py-8 md:grid-cols-4 md:gap-y-40">
               <li><Card
@@ -91,4 +80,4 @@ import Card from '../../components/project/card/projectCard.astro'
 
     <div class="-mb-7 mt-8"><Footer /></div>
   </main>
-</body>
+</Layout>

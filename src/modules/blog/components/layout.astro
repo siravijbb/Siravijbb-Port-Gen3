@@ -12,7 +12,7 @@ export interface Props {
   minutesRead: string
 }
 
-const { slug, data } = Astro.props.blog
+const { data } = Astro.props.blog
 const { banner, title, subtitle } = data
 ---
 
@@ -22,7 +22,6 @@ const { banner, title, subtitle } = data
   <div class="mx-auto max-w-4xl pt-6">
     <div
       class="overflow-hidden rounded-none bg-white shadow-xl sm:rounded-2xl dark:bg-[#332940]"
-      style={`view-transition-name: blog-${slug}`}
     >
       <div class="flex items-center justify-center overflow-hidden">
         <Image

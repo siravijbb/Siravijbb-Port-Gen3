@@ -1,124 +1,151 @@
 ---
-import FocusNav from '../components/script/focusnav.astro'
+const links = [
+  { href: '/', label: 'Home' },
+  { href: '/blog', label: 'Blog' },
+  { href: '/about-me', label: 'Biography' },
+  { href: '/contact', label: 'Contact' },
+]
+
+const path = Astro.url.pathname
+const isActive = (href: string) =>
+  href === '/' ? path === '/' : path.startsWith(href)
 ---
 
-<FocusNav />
 <nav
-  class="z-50 border-gray-200 bg-white dark:border-gray-700 dark:bg-gray-900"
+  class="relative z-50 border-gray-200 bg-white dark:border-gray-700 dark:bg-gray-900"
 >
   <div
-    class="mx-auto flex max-w-7xl flex-wrap items-center justify-between bg-white px-4 py-2.5 dark:bg-gray-900"
+    class="mx-auto flex max-w-7xl flex-wrap items-center justify-between px-4 py-2.5"
   >
-    <a href="/#" class="flex items-center">
+    <a href="/" class="flex items-center">
       <span
-        class="self-center whitespace-nowrap text-2xl font-semibold dark:text-white"
+        class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white"
         >Siravij</span
       >
     </a>
-    <button
-      data-collapse-toggle="navbar-dropdown"
-      type="button"
-      class="ml-3 inline-flex items-center rounded-lg p-2 text-sm text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 md:hidden dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
-      aria-controls="navbar-dropdown"
-      aria-expanded="false"
-    >
-      <span class="sr-only">Open main menu</span>
-      <svg
-        class="h-6 w-6"
-        aria-hidden="true"
-        fill="currentColor"
-        viewBox="0 0 20 20"
-        xmlns="http://www.w3.org/2000/svg"
-        ><path
-          fill-rule="evenodd"
-          d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
-          clip-rule="evenodd"></path></svg
+    <div class="flex items-center gap-1 md:order-2">
+      <button
+        id="theme-toggle"
+        type="button"
+        class="rounded-lg p-2 text-gray-500 hover:bg-gray-100 focus:ring-2 focus:ring-gray-200 focus:outline-hidden dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+        aria-label="Toggle dark mode"
+        title="Toggle dark mode"
       >
-    </button>
+        <!-- Moon: shown in light mode -->
+        <svg
+          class="h-5 w-5 dark:hidden"
+          aria-hidden="true"
+          fill="currentColor"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+          ><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"
+          ></path></svg
+        >
+        <!-- Sun: shown in dark mode -->
+        <svg
+          class="hidden h-5 w-5 dark:block"
+          aria-hidden="true"
+          fill="currentColor"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+          ><path
+            fill-rule="evenodd"
+            d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+            clip-rule="evenodd"></path></svg
+        >
+      </button>
+      <button
+        id="navbar-toggle"
+        type="button"
+        class="inline-flex items-center rounded-lg p-2 text-sm text-gray-500 hover:bg-gray-100 focus:ring-2 focus:ring-gray-200 focus:outline-hidden md:hidden dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+        aria-controls="navbar-dropdown"
+        aria-expanded="false"
+      >
+        <span class="sr-only">Open main menu</span>
+        <svg
+          class="h-6 w-6"
+          aria-hidden="true"
+          fill="currentColor"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+          ><path
+            fill-rule="evenodd"
+            d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+            clip-rule="evenodd"></path></svg
+        >
+      </button>
+    </div>
     <div class="hidden w-full md:block md:w-auto" id="navbar-dropdown">
       <ul
-        class="mt-4 flex flex-col rounded-lg border border-gray-100 bg-gray-50 p-4 font-medium md:mt-0 md:flex-row md:space-x-8 md:border-0 md:bg-white md:text-sm dark:border-gray-700 dark:bg-gray-800 md:dark:bg-gray-900"
+        class="mt-4 flex flex-col rounded-lg border border-gray-100 bg-gray-50 p-4 font-medium md:mt-0 md:flex-row md:space-x-8 md:border-0 md:bg-transparent md:p-0 md:text-sm dark:border-gray-700 dark:bg-gray-800 md:dark:bg-transparent"
       >
-        <li>
-          <a
-            href="/"
-            class="block rounded py-2 pl-3 pr-4 text-gray-700 hover:bg-gray-100 md:border-0 md:p-0 md:hover:bg-transparent md:hover:text-blue-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent md:dark:hover:text-white"
-            aria-current="page">Home</a
-          >
-        </li>
-        <li>
-          <a
-            href="/blog"
-            class="block rounded py-2 pl-3 pr-4 text-gray-700 hover:bg-gray-100 md:border-0 md:p-0 md:hover:bg-transparent md:hover:text-blue-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent md:dark:hover:text-white"
-            >Blog</a
-          >
-        </li>
-        <!--
-        <li>
-          <button
-            id="dropdownNavbarLink"
-            data-dropdown-toggle="dropdownNavbar"
-            class="flex w-full items-center justify-between rounded py-2 pl-3 pr-4 text-gray-700 hover:bg-gray-100 md:w-auto md:border-0 md:p-0 md:hover:bg-transparent md:hover:text-blue-700 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white dark:focus:text-white md:dark:hover:bg-transparent"
-            >Project <svg
-              class="ml-1 h-5 w-5"
-              aria-hidden="true"
-              fill="currentColor"
-              viewBox="0 0 20 20"
-              xmlns="http://www.w3.org/2000/svg"
-              ><path
-                fill-rule="evenodd"
-                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                clip-rule="evenodd"></path></svg
-            ></button>
-          ###  Dropdown menu
-          <div
-            id="dropdownNavbar"
-            class="z-10 hidden w-44 divide-y divide-gray-100 rounded-lg border border-gray-700 bg-white font-normal shadow dark:divide-gray-600 dark:bg-gray-700"
-          >
-            <ul
-              class="py-2 text-sm text-gray-700 dark:text-gray-400"
-              aria-labelledby="dropdownLargeButton"
-            >
-              <li>
-                <a
-                  href="/project"
-                  class="block border-b-2 border-gray-700 px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                  >All of my Project</a
-                >
-              </li>
-              <li>
-                <a
-                  href="https://github.com/KNACKSAT2-TGPS"
-                  class="block border-b-2 border-gray-700 px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                  >KNACKSAT 2 TGPS</a
-                >
-              </li>
-              <li>
-                <a
-                  href="https://nbgears.tech/"
-                  class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                  >NB GEARS</a
-                >
-              </li>
-            </ul>
-          </div>
-        -->
-          <li>
-            <a
-              href="/about-me"
-              class="block rounded py-2 pl-3 pr-4 text-gray-700 hover:bg-gray-100 md:border-0 md:p-0 md:hover:bg-transparent md:hover:text-blue-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent md:dark:hover:text-white"
-              >Biography</a
-            >
-          </li>
-
-          <li>
-            <a
-              href="/contact"
-              class="block rounded py-2 pl-3 pr-4 text-gray-700 hover:bg-gray-100 md:border-0 md:p-0 md:hover:bg-transparent md:hover:text-blue-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent md:dark:hover:text-white"
-              >Contact</a
-            >
-          </li>
+        {
+          links.map(({ href, label }) => (
+            <li>
+              <a
+                href={href}
+                aria-current={isActive(href) ? 'page' : undefined}
+                class:list={[
+                  'block rounded-sm py-2 pr-4 pl-3 md:p-0',
+                  isActive(href)
+                    ? 'bg-blue-700 text-white md:bg-transparent md:text-blue-700 dark:bg-blue-600 md:dark:bg-transparent md:dark:text-white'
+                    : 'text-gray-700 hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent',
+                ]}>{label}</a
+              >
+            </li>
+          ))
+        }
       </ul>
     </div>
   </div>
 </nav>
+
+<script>
+  const themeToggle = document.getElementById('theme-toggle')
+  let activeTransition: ViewTransition | undefined
+  themeToggle?.addEventListener('click', event => {
+    const root = document.documentElement
+    const applyTheme = () => {
+      const theme = root.classList.toggle('dark') ? 'dark' : 'light'
+      root.style.colorScheme = theme
+      try {
+        localStorage.setItem('theme', theme)
+      } catch {}
+    }
+
+    const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches
+    if (!document.startViewTransition || reduceMotion) {
+      applyTheme()
+      return
+    }
+
+    // Reveal the new theme as a circle growing out of the toggle button
+    const rect = themeToggle.getBoundingClientRect()
+    const x = event.clientX || rect.left + rect.width / 2
+    const y = event.clientY || rect.top + rect.height / 2
+    const radius = Math.hypot(
+      Math.max(x, innerWidth - x),
+      Math.max(y, innerHeight - y)
+    )
+
+    root.style.setProperty('--theme-x', `${x}px`)
+    root.style.setProperty('--theme-y', `${y}px`)
+    root.style.setProperty('--theme-r', `${radius}px`)
+    root.classList.add('theme-transition')
+    // A click mid-transition skips the running one; only the latest may clean up
+    const transition = document.startViewTransition(applyTheme)
+    activeTransition = transition
+    transition.finished.finally(() => {
+      if (activeTransition === transition) {
+        root.classList.remove('theme-transition')
+      }
+    })
+  })
+
+  const menuToggle = document.getElementById('navbar-toggle')
+  const menu = document.getElementById('navbar-dropdown')
+  menuToggle?.addEventListener('click', () => {
+    const open = menu?.classList.toggle('hidden') === false
+    menuToggle.setAttribute('aria-expanded', String(open))
+  })
+</script>
