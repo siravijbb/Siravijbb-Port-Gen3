@@ -1,4 +1,5 @@
-import { CollectionEntry, getCollection } from 'astro:content'
+import { getCollection } from 'astro:content'
+import type { CollectionEntry } from 'astro:content'
 import dayjs from 'dayjs'
 
 export const getCollectionBlog = async (): Promise<

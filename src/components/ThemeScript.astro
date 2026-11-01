@@ -1,0 +1,17 @@
+<script is:inline>
+  // Runs before paint so the page never flashes the wrong theme.
+  // A saved choice from the navbar toggle wins; otherwise start from the OS setting.
+  ;(() => {
+    let theme = null
+    try {
+      theme = localStorage.getItem('theme')
+    } catch {}
+    if (theme !== 'light' && theme !== 'dark') {
+      theme = matchMedia('(prefers-color-scheme: dark)').matches
+        ? 'dark'
+        : 'light'
+    }
+    document.documentElement.classList.toggle('dark', theme === 'dark')
+    document.documentElement.style.colorScheme = theme
+  })()
+</script>

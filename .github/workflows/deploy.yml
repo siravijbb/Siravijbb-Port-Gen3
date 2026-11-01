@@ -12,26 +12,26 @@ jobs:
       pages: write
       id-token: write
     steps:
-      - uses: actions/checkout@v3
-      - uses: pnpm/action-setup@v2
+      - uses: actions/checkout@v5
+      - uses: pnpm/action-setup@v4
         with:
-          version: 8.0.0
-      - uses: actions/setup-node@v3
+          version: 10
+      - uses: actions/setup-node@v5
         with:
-          node-version: 18
+          node-version: 24
           cache: pnpm
       - name: 'install'
-        run: pnpm -r i --frozen-lockfile
+        run: pnpm i --frozen-lockfile
       - name: 'build'
         env:
           BLURHASH_TOKEN: ${{ secrets.BLURHASH_TOKEN }}
           CONTENTFUL_SPACE_ID: ${{ secrets.CONTENTFUL_SPACE_ID }}
           CONTENTFUL_ACCESS_TOKEN: ${{ secrets.CONTENTFUL_ACCESS_TOKEN }}
         run: pnpm build
-      - uses: actions/upload-pages-artifact@v1
+      - uses: actions/upload-pages-artifact@v4
         with:
           path: dist
-      - uses: actions/deploy-pages@v1
+      - uses: actions/deploy-pages@v4
         id: deployment
       - name: 'logging'
         run: echo "Deployed at ${{ steps.deployment.outputs.page_url }}"

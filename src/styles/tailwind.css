@@ -1,0 +1,47 @@
+@import 'tailwindcss';
+@plugin '@tailwindcss/typography';
+
+/* Dark mode follows the `dark` class on <html>, set by the theme toggle */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: 'Niramit', ui-sans-serif, system-ui, sans-serif;
+  --font-header: 'LINE Seed', ui-sans-serif, system-ui, sans-serif;
+
+  --color-siravijpp: #554994;
+  --color-siravijw: #f29393;
+  --color-siravijdw: #c17575;
+  --color-dwarn: #332940;
+  --color-black-overlay: rgba(0, 0, 0, 0.25);
+}
+
+/* Theme toggle animates the snapshot itself (see Navbar.astro), so drop the default crossfade */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+
+@layer base {
+  /* Tailwind v4 defaults borders to currentColor; keep the v3 look */
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
+  }
+
+  button:not(:disabled),
+  [role='button']:not(:disabled) {
+    cursor: pointer;
+  }
+}
+
+@utility prose {
+  line-height: 2;
+
+  & h2 {
+    margin-top: 0;
+  }
+}

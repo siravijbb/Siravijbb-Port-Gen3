@@ -104,6 +104,8 @@ export const iframeParser = () => {
                         format: 'json',
                         url: extractedUrl,
                       })
+                      .get()
+                      .json()
 
                     if (!fs.existsSync(oembedCacheDirectory)) {
                       fs.mkdirSync(oembedCacheDirectory, {

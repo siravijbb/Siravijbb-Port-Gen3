@@ -1,5 +1,5 @@
 {
-  "name": "rayriffy-blog-next",
+  "name": "siravij-portfolio",
   "version": "0.0.1",
   "private": true,
   "type": "module",
@@ -10,37 +10,34 @@
     "preview": "astro preview",
     "astro": "astro",
     "clean": "pnpm data clean",
-    "format": "prettier --write --plugin-search-dir=. .",
-    "data": "pnpm --silent tem tools/markdownBuilder.ts",
-    "tem": "node --experimental-specifier-resolution=node --loader ts-node/esm"
+    "format": "prettier --write .",
+    "data": "tsx tools/markdownBuilder.ts"
   },
   "devDependencies": {
-    "@astrojs/markdown-remark": "^4.2.1",
-    "@astrojs/rss": "^4.0.5",
-    "@astrojs/sitemap": "^3.1.1",
-    "@astrojs/tailwind": "^5.1.0",
-    "@tailwindcss/typography": "^0.5.10",
+    "@astrojs/markdown-remark": "^7.3.5",
+    "@astrojs/rss": "^4.0.19",
+    "@astrojs/sitemap": "^3.7.4",
+    "@tailwindcss/typography": "^0.5.20",
+    "@tailwindcss/vite": "^4.3.3",
     "@types/js-yaml": "^4.0.9",
-    "astro": "^4.4.5",
+    "@types/node": "^24.19.2",
+    "astro": "^7.4.4",
     "blurhash": "^2.0.5",
-    "dayjs": "^1.11.10",
-    "dotenv": "^16.4.5",
-    "html-entities": "^2.4.0",
-    "js-yaml": "^4.1.1",
-    "prettier": "^2.8.8",
-    "prettier-plugin-astro": "^0.9.1",
-    "prettier-plugin-tailwindcss": "^0.3.0",
+    "dayjs": "^1.11.23",
+    "dotenv": "^18.0.9",
+    "html-entities": "^2.6.0",
+    "js-yaml": "^5.5.0",
+    "prettier": "^3.9.10",
+    "prettier-plugin-astro": "^1.1.2",
+    "prettier-plugin-tailwindcss": "^0.8.1",
     "reading-time": "^1.5.0",
-    "tailwindcss": "^3.4.1",
-    "ts-node": "^10.9.2",
-    "unist-util-select": "4.0.3",
-    "wretch": "^2.8.0"
+    "tailwindcss": "^4.3.3",
+    "tsx": "^4.23.15",
+    "unist-util-select": "^5.1.0",
+    "wretch": "^3.0.9"
   },
   "dependencies": {
-    "contentful-cli": "^2.8.27",
-    "flowbite": "^1.8.1",
-    "pnpm": "^8.15.4",
-    "sharp": "^0.33.2",
-    "typescript": "^5.3.3"
+    "sharp": "^0.35.5",
+    "typescript": "^5.9.3"
   }
 }

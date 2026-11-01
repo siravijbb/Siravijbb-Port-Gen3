@@ -12,7 +12,7 @@ export interface Props {
   minutesRead: string
 }
 
-const { slug, data } = Astro.props.blog
+const { id: slug, data } = Astro.props.blog
 const { banner, title, subtitle } = data
 ---
 

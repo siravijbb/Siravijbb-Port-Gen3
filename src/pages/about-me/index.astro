@@ -1,254 +1,141 @@
 ---
-import AishaB from '../../components/script/aishab.astro'
 import Navbar from '../../components/Navbar.astro'
 import Layout from '../../components/layout.astro'
 import Footer from '../../components/Footer.astro'
 import Contact from '../../components/script/Contact.astro'
+
+const pill =
+  'inline-flex items-center gap-1 rounded-lg bg-black px-2 py-1 text-white shadow-lg hover:shadow-xl'
+
+const documents = [
+  { href: '/SiravijPraevisavakijCV.pdf', label: 'CV' },
+  { href: '/YWC20_Portfolio.pdf', label: 'YWC20 Portfolio' },
+  { href: '/SIRAVIJP.PORTKMUTT_R1.pdf', label: 'KMUTT Portfolio' },
+]
 ---
 
-<head>
-  <Layout
-    title="Home"
-    ,
-    description="Home of Aisha Wiki"
-    ,
-    image="/model/model10.1.webp"
-    ,
-  />
-</head>
-<Navbar />
-<body>
-  <AishaB />
+<Layout
+  title="Biography"
+  description="Siravij Praevisavakij biography"
+  image="/siravij.webp"
+>
+  <Navbar />
   <main
-    class="customFont mx-auto h-full max-w-7xl gap-4 rounded-xl shadow-xl dark:bg-[#332940]"
+    class="mx-auto max-w-7xl rounded-xl shadow-xl md:my-6 dark:bg-[#332940]"
   >
-    <p>
-      <p id="debutAnnment" class="text-center text-sm"></p>
-      <div class="instructions">
-        <h1 class="md:text-md text-center text-[1.1rem]">
-          <span class="text-gradient">Siravij Praevisavakij biography</span>
-        </h1>
-        <div class="item-center md:text-md mx-auto text-sm">
-          <p
-            class="mx-auto break-normal text-center text-[0.9rem] md:break-all md:text-[1.2rem] dark:text-gray-100"
-          >
-            This website is build by <code>Siravij</code>
-          </p>
-        </div>
-      </div>
+    <div class="instructions">
+      <h1 class="text-center text-[1.1rem] md:text-base">
+        <span class="text-gradient">Siravij Praevisavakij biography</span>
+      </h1>
+      <p class="mx-auto text-center text-[0.9rem] md:text-[1.2rem]">
+        This website is built by <code>Siravij</code>
+      </p>
+    </div>
 
-      <div
-        class="mx-auto rounded-lg bg-neutral-200 text-black sm:px-2 md:px-2 md:pb-20 dark:bg-[#121212]"
+    <div
+      class="mx-auto rounded-lg bg-neutral-200 px-2 py-10 md:flex md:gap-4 md:px-8 dark:bg-[#121212]"
+    >
+      <section
+        class="mx-auto flex-none rounded-lg bg-white px-5 pb-4 text-center shadow-xl hover:shadow-2xl md:w-80 dark:bg-[#332940]"
       >
-        <div
-          class="pb-auto mx-auto rounded-lg py-10 sm:block sm:px-2 md:flex md:px-8"
-        >
-          <div
-            class="item-center mx-auto flex-auto rounded-lg bg-white px-5 text-center shadow-xl hover:shadow-2xl dark:bg-[#332940]"
-          >
-            <p
-              class="pt-3 text-center text-2xl md:pt-2 md:text-lg dark:text-gray-100"
-            >
-              Siravij Praevisavakij
-            </p>
-            <p>
-              <img
-                class="mx-auto"
-                src="/siravij.webp"
-                width="auto"
-                height="1 rem"
-                alt="Siravij half body"
-              />
-            </p>
+        <h2 class="pt-3 text-2xl md:pt-2 md:text-lg">Siravij Praevisavakij</h2>
+        <img
+          class="mx-auto"
+          src="/siravij.webp"
+          width="659"
+          height="899"
+          alt="Siravij half body"
+        />
+      </section>
+
+      <section
+        class="mt-3 flex-1 rounded-lg bg-white px-4 py-4 text-sm shadow-xl md:mt-0 md:text-xl dark:bg-[#332940]"
+      >
+        <h2 class="text-center md:text-left">Biography</h2>
+        <p class="p-4">
+          Siravij the electrical and website engineer nerd, who love to test the
+          website speed and design electrical circuit.
+        </p>
+
+        <dl class="space-y-5 px-4">
+          <div class="flex flex-wrap items-center gap-2">
+            <dt>Project :</dt>
+            <dd class="flex flex-wrap gap-2">
+              <a
+                href="https://creatorsgarten.org/"
+                aria-label="creatorsgarten Page"
+                class={pill}
+              >
+                <img
+                  class="h-5 w-auto"
+                  src="/garten.svg"
+                  alt=""
+                  width="20"
+                  height="20"
+                />
+                creatorsgarten
+              </a>
+              <a href="https://github.com/KNACKSAT2-TGPS" class={pill}>
+                KNACKSAT-2 TGPS
+              </a>
+            </dd>
           </div>
-          <div
-            class="mt-3 overflow-hidden text-ellipsis rounded-lg bg-white px-2 py-3 text-sm shadow-xl md:ml-2 md:mt-0 md:py-2 md:text-xl dark:bg-[#332940] dark:text-gray-100"
-          >
-            <h1 class="text-center md:text-left">Biography</h1>
-            <p>
-              <ol>
-                <li>
-                  <p class="p-4">
-                    Siravij the electrical and website engineer nerd, who love
-                    to test the website speed and design electrical circuit.
-                  </p>
-                </li>
 
-                <p class="py-1">
-                  <li>
-                    <p class="inline items-center">
-                      - Project :
-                      <a
-                        href="https://creatorsgarten.org/"
-                        aria-label="creatorsgarten Page"
-                      >
-                        <span
-                          ><div
-                            class="inline rounded-lg bg-black p-1 text-white shadow-lg hover:shadow-xl"
-                          >
-                            <img
-                              class="p-auto mx-1 mb-1 inline h-5 w-auto items-center"
-                              src="/garten.svg"
-                              alt="creatorsgarten. Logo"
-                              height="fit"
-                              width="auto"
-                            />
-                            <p
-                              class="-ml-1 inline rounded-lg bg-black p-1 text-white shadow-lg hover:shadow-xl"
-                            >
-                              creatorsgarten
-                            </p>
-                          </div>
-                        </span>
-                      </a>
-                      <span class="mx-2 space-y-4">
-                        <a
-                          href="#"
-                          aria-label="NB GEARS Page"
-                        >
-                          <span
-                            ><div
-                              class="inline rounded-lg bg-black p-1 text-white shadow-lg hover:shadow-xl"
-                            >
-                              <p
-                                class="mx-1 ml-3 inline rounded-lg bg-black p-1 text-white shadow-lg hover:shadow-xl"
-                              >
-                                NB GEARS
-                              </p>
-                            </div>
-                          </span>
-                        </a></span
-                      >
-                      <li
-                        class="mt-3 inline-flex rounded-lg bg-black p-2 text-white shadow-lg hover:shadow-xl"
-                      >
-                        <p class="inline items-center text-white">
-                          <a href="https://github.com/KNACKSAT2-TGPS"
-                            ><span> KNACKSAT-2 TGPS</span>
-                          </a>
-                        </p>
-                      </li>
-                    </p>
-                  </li>
-                  <li>
-                    <div class="mt-5 flex">
-                      <p class="mt-2 flex">- Contact :</p><Contact />
-                    </div>
-                  </li>
-                  <li>
-                    <div class="mt-5 flex">
-                      <p class="mt-2 flex">- My resume :</p>
-                      <a
-                        href="/SiravijPraevisavakijCV.pdf"
-                        aria-label="CV"
-                        class="ml-1 mt-2"
-                      >
-                        <span
-                          ><div
-                            class="inline rounded-lg bg-black p-1 text-white shadow-lg hover:shadow-xl"
-                          >
-                            <p
-                              class="mx-1 inline rounded-lg bg-black p-1 text-white shadow-lg hover:shadow-xl"
-                            >
-                              CV
-                            </p>
-                          </div>
-                        </span>
-                      </a>
-                      <a
-                        href="https://Siravijbb.com/YWC20_Portfolio.pdf"
-                        aria-label="YWC20 Porfolio"
-                        class="ml-1 mt-2"
-                      >
-                        <span
-                        ><div
-                          class="inline rounded-lg bg-black p-1 text-white shadow-lg hover:shadow-xl"
-                        >
-                            <p
-                              class="mx-1 inline rounded-lg bg-black p-1 text-white shadow-lg hover:shadow-xl"
-                            >
-                              YWC20 Portfolio
-                            </p>
-                          </div>
-                        </span>
-                      </a>
-                      <a
-                        href="https://Siravijbb.com/SIRAVIJP.PORTKMUTT_R1.pdf"
-                        aria-label="CV"
-                        class="ml-1 mt-2"
-                      >
-                        <span
-                          ><div
-                            class="inline rounded-lg bg-black p-1 text-white shadow-lg hover:shadow-xl"
-                          >
-                            <p
-                              class="mx-1 inline rounded-lg bg-black p-1 text-white shadow-lg hover:shadow-xl"
-                            >
-                              KMUTT Portfolio
-                            </p>
-                          </div>
-                        </span>
-                      </a>
-
-                    </div>
-                  </li>
-                </p>
-              </ol>
-            </p>
+          <div class="flex flex-wrap items-center gap-2">
+            <dt>Contact :</dt>
+            <dd><Contact /></dd>
           </div>
-        </div>
-      </div>
-      <Footer />
 
-      <style>
-        .text-gradient {
-          background-image: var(--accent-gradient);
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-          background-size: 400%;
-          background-position: 0%;
-        }
-        .instructions {
-          line-height: 1.6;
-          margin: 1rem 0;
-          border: 1px solid rgba(var(--accent), 25%);
-
-          padding: 1rem;
-          border-radius: 0.4rem;
-        }
-        .instructions code {
-          font-size: 0.875em;
-          font-weight: bold;
-          background: rgba(var(--accent), 12%);
-          color: rgb(var(--accent));
-          border-radius: 4px;
-          padding: 0.3em 0.45em;
-        }
-        .instructions strong {
-          color: rgb(var(--accent));
-        }
-        .Maincon {
-          font-size: 1.5rem;
-          max-width: 1280px;
-          margin: 40px auto;
-        }
-        .col-span-middle {
-          grid-column: span 2;
-          text-align: center;
-        }
-        :root {
-          --accent: 124, 58, 237;
-          --accent-gradient: linear-gradient(
-            45deg,
-            rgb(var(--accent)),
-            #da62c4 30%,
-            white 60%
-          );
-        }
-        html {
-          font-family: system-ui, sans-serif;
-        }
-      </style>
-    </p>
+          <div class="flex flex-wrap items-center gap-2">
+            <dt>My resume :</dt>
+            <dd class="flex flex-wrap gap-2">
+              {
+                documents.map(({ href, label }) => (
+                  <a href={href} class={pill}>
+                    {label}
+                  </a>
+                ))
+              }
+            </dd>
+          </div>
+        </dl>
+      </section>
+    </div>
+    <Footer />
   </main>
-</body>
+</Layout>
+
+<style>
+  :root {
+    --accent: 124, 58, 237;
+    --accent-gradient: linear-gradient(
+      45deg,
+      rgb(var(--accent)),
+      #da62c4 30%,
+      white 60%
+    );
+  }
+  .text-gradient {
+    background-image: var(--accent-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 400%;
+    background-position: 0%;
+  }
+  .instructions {
+    line-height: 1.6;
+    margin: 1rem 0;
+    border: 1px solid rgba(var(--accent), 25%);
+    padding: 1rem;
+    border-radius: 0.4rem;
+  }
+  .instructions code {
+    font-size: 0.875em;
+    font-weight: bold;
+    background: rgba(var(--accent), 12%);
+    color: rgb(var(--accent));
+    border-radius: 4px;
+    padding: 0.3em 0.45em;
+  }
+</style>
