@@ -81,7 +81,6 @@ const { page, featuredBlogPost } = Astro.props
             <a href={`/blog/${slug}`} rel="prefetch">
               <div
                 class="relative overflow-hidden rounded-none bg-white shadow-lg hover:shadow-xl sm:rounded-2xl dark:bg-[#332940] "
-                style={`view-transition-name: blog-${slug}`}
               >
                 {data.draft && (
                   <span class="absolute z-10 rounded-br-2xl bg-black px-3 py-1.5 text-sm font-bold italic text-white">
