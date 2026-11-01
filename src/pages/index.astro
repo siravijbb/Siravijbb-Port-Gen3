@@ -12,26 +12,25 @@ import Footer from '../components/Footer.astro'
 >
   <Navbar />
   <main class="flex flex-1 bg-neutral-500 dark:bg-neutral-800">
-    <div
-      class="mx-auto grid w-full max-w-7xl items-center gap-8 px-6 py-10 md:grid-cols-2 md:px-10"
-    >
-      <div
-        class="w-fit justify-self-center rounded-xl bg-gray-900 p-4 text-3xl text-white shadow-xl md:justify-self-start md:text-4xl"
-      >
-        Welcome to<b class="text-[#ab98ff] underline"> Siravij's</b>
-        <span class="block text-xl">I'm Siravij Praevisavakij</span>
+    <div class="mx-auto flex w-full max-w-7xl items-center justify-center px-6 py-10">
+      <div class="relative w-full max-w-[calc(80svh*3/4)]">
+        <img
+          src="/Siravij_INTBall-900.webp"
+          srcset="/Siravij_INTBall-900.webp 900w, /Siravij_INTBall.webp 4284w"
+          sizes="(min-width: 768px) 50vw, 100vw"
+          width="900"
+          height="1200"
+          alt="It's Me, Siravij!"
+          fetchpriority="high"
+          class="h-auto w-full rounded-xl shadow-xl"
+        />
+        <div
+          class="absolute inset-x-4 bottom-4 rounded-xl bg-gray-900/75 p-4 text-2xl text-white shadow-xl backdrop-blur-sm sm:text-3xl md:text-4xl"
+        >
+          Welcome to<b class="text-[#ab98ff] underline"> Siravij's</b>
+          <span class="block text-lg sm:text-xl">I'm Siravij Praevisavakij</span>
+        </div>
       </div>
-
-      <img
-        src="/Siravij_INTBall-900.webp"
-        srcset="/Siravij_INTBall-900.webp 900w, /Siravij_INTBall.webp 4284w"
-        sizes="(min-width: 768px) 50vw, 100vw"
-        width="900"
-        height="1200"
-        alt="It's Me, Siravij!"
-        fetchpriority="high"
-        class="mx-auto h-auto max-h-[75svh] w-auto object-contain"
-      />
     </div>
   </main>
   <Footer />
